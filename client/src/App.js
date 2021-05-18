@@ -44,9 +44,7 @@ function App() {
           <Route exact path="/">
             <Login/>
           </Route>
-        
-        
-          <Route path="/dashboard">
+          <Route exact path="/dashboard">
             <Entries/>
           </Route>
        
