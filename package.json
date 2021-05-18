@@ -1,0 +1,29 @@
+{
+  "name": "mern-stack-fetch-data",
+  "version": "1.0.0",
+  "description": "A simple app with login form and profiles tble",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
+  },
+  "author": "Akshad Agrawal PICT",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.1.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^5.12.9",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-success-popup": "^1.1.2",
+    "reactjs-popup": "^2.0.4",
+    "validator": "^13.6.0"
+  }
+}
