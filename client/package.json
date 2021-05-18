@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://immense-taiga-62059.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
