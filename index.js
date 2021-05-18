@@ -4,6 +4,7 @@ const dotenv= require('dotenv');
 const helmet= require('helmet');
 const auth= require('./routes/auth');
 const entry= require('./routes/entry');
+const path= require('path');
 
 //dotenv config
 dotenv.config();
@@ -23,7 +24,20 @@ app.use('/api/auth', auth);
 app.use('/api/entry', entry);
 
 
+//prepare to deploy
+//Serve static asesets
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res) =>{
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
+
+
 //Running app on a server
-app.listen(9000, ()=>{
+const port= process.env.PORT || 9000;
+app.listen(port, ()=>{
     console.log('Server started a port 9000');
 });
