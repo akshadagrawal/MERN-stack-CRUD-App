@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Alert, Button, Container, Form, FormGroup, Input } from 'reactstrap'
-import NavBar from './NavBar'
 import { useDispatch, useSelector } from 'react-redux';
 import { login_user } from '../redux/ducks/authReducer';
 import { useHistory } from 'react-router';
@@ -35,7 +34,6 @@ const Login = () => {
 
     return (   
         <>
-            <NavBar/>
             <Container className="mt-5">
                 <h1 className= "header" style={{marginBottom:"25px"}}>Welcome!</h1>
                 {errors.email &&<Alert color="danger" className= "alert">{errors.email}</Alert> }

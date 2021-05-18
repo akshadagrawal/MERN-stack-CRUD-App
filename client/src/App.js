@@ -2,7 +2,6 @@ import Login from "./components/Login";
 import jwt_decode from 'jwt-decode';
 import {
   BrowserRouter as Router,
-  Switch,
   Route} from "react-router-dom";
 
 import './App.css';
@@ -10,6 +9,7 @@ import { useDispatch } from "react-redux";
 import setAuthToken from "./redux/utils/setAuthToken";
 import { logout_user } from "./redux/ducks/authReducer";
 import Entries from "./components/Entries";
+import NavBar from "./components/NavBar";
 
 function App() {
 
@@ -36,20 +36,23 @@ function App() {
     
   }
   return (
-    <Router>
+    
       <div className="App">
-        <Switch>
+        <NavBar/>
+        <Router>
+       
           <Route exact path="/">
             <Login/>
           </Route>
-        </Switch>
-        <Switch>
+        
+        
           <Route path="/dashboard">
             <Entries/>
           </Route>
-        </Switch>
+       
+        </Router>
       </div>
-    </Router>
+   
     
   );
 }

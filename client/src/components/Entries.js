@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { Button, Container } from 'reactstrap';
-import NavBar from './NavBar'
 import Tab1 from './tabs/Tab1';
 import Tab2 from './tabs/Tab2';
 
@@ -18,8 +17,7 @@ const Entries = () => {
     if(tab1) display= <Tab1/>
     else display= <Tab2/>
     return (
-        <div>
-            <NavBar/>
+        <div> 
             <Container >
             { (errors=== "No token, authorization denied" &&!isAuthenticated) && history.push('/')}
                 <div className="tabDiv">
